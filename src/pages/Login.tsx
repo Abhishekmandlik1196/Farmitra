@@ -55,7 +55,7 @@ export default function Login() {
         </div>
         <div>
           <h2 className="text-4xl font-bold leading-tight mb-4">
-           Make farming<br/>smart and profitable
+           Make farming<br/>Smart and Profitable
           </h2>
           <p className="text-green-100 max-w-md">
             Hyperlocal weather, live mandi prices, AI disease diagnosis, and expert advice — all in one app, in your language.

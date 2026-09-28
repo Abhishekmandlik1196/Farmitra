@@ -1,0 +1,117 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  font-family: 'Noto Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  overscroll-behavior-y: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: #f9fafb;
+}
+
+/* Safe area padding for modern mobile devices */
+.pb-safe {
+  padding-bottom: env(safe-area-inset-bottom, 0);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #15803d33;
+  border-radius: 6px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #15803d66;
+}
+
+/* Leaflet map */
+.leaflet-container {
+  width: 100%;
+  height: 100%;
+  border-radius: 0.75rem;
+  font-family: inherit;
+}
+
+/* Utility classes */
+@layer components {
+  .card {
+    @apply bg-white rounded-xl shadow-sm border border-gray-100 p-4;
+  }
+  .btn-primary {
+    @apply bg-farm-primary text-white font-medium rounded-lg px-4 py-2.5 hover:bg-green-700 active:scale-[0.98] transition-all shadow-sm disabled:opacity-50;
+  }
+  .btn-secondary {
+    @apply bg-farm-secondary text-farm-dark font-medium rounded-lg px-4 py-2.5 hover:bg-yellow-500 active:scale-[0.98] transition-all shadow-sm;
+  }
+  .btn-outline {
+    @apply border border-farm-primary text-farm-primary font-medium rounded-lg px-4 py-2.5 hover:bg-farm-light active:scale-[0.98] transition-all;
+  }
+  .input-field {
+    @apply w-full rounded-lg border-gray-300 focus:border-farm-primary focus:ring-farm-primary px-4 py-2.5 text-base;
+  }
+  .badge {
+    @apply inline-flex items-center rounded-full px-2 py-0.5 text-xs font-medium;
+  }
+}
+
+/* Responsive: give main content bottom padding only on mobile (to clear bottom nav) */
+@media (max-width: 1023px) {
+  main {
+    padding-bottom: 80px;
+  }
+}
+
+/* Tablet and up: subtle grid background on the body for professional feel */
+@media (min-width: 1024px) {
+  body {
+    background-color: #f4f7f5;
+    background-image:
+      radial-gradient(circle at 25% 25%, rgba(21, 128, 61, 0.03) 0%, transparent 50%),
+      radial-gradient(circle at 75% 75%, rgba(234, 179, 8, 0.03) 0%, transparent 50%);
+  }
+  .card {
+    @apply shadow-sm hover:shadow-md transition-shadow;
+  }
+}
+
+/* Large desktop: comfortable container width */
+@media (min-width: 1536px) {
+  .max-w-7xl {
+    max-width: 1400px;
+  }
+}
+
+/* Smooth page transitions */
+.page-enter {
+  animation: pageIn 0.2s ease-out;
+}
+
+@keyframes pageIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Better focus rings for accessibility */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid #15803d;
+  outline-offset: 2px;
+}

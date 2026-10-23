@@ -96,5 +96,3 @@ The app runs on port 5173, fully optimized for mobile screens. You can install i
 - Respects traditional knowledge while augmenting it with technology
 - Zero dependency on paid API keys for core demo functionality
 
-## 🏆 Hackathon Ready
-This is a fully working demo (not dummy screens) that showcases all core features. Backend integrations for all APIs are documented and ready to plug in.
